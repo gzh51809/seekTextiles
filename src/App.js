@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route,Switch,Redirect} from 'react-router-dom';
+import './App.scss';
+
+import Home from '@/page/home/Home';
+import Factory from '@/page/factory/Factory';
+import Finder from '@/page/finder/Finder';
+import Cart from '@/page/cart/Cart';
+import Mine from '@/page/mine/Mine';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/factory" component={Factory} />
+          <Route path="/finder" component={Finder} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/mine" component={Mine} />
+          <Redirect from="/" to="/home" exact/>
+        </Switch>
       </div>
     );
   }
