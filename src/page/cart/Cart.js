@@ -1,9 +1,17 @@
 import React,{Component} from 'react';
+import BottomBar from '@com/BottomBar';
 
-function Cart(){
-    return (
-        <h1>Cart</h1>
-    )
+
+class Cart extends Component{
+    render(){
+        return (
+            <div className="page cart">
+                <h1>Cart1</h1>
+                <BottomBar/>
+            </div>
+            
+        )
+    }
 }
 
 export default Cart;

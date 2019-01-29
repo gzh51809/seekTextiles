@@ -1,9 +1,17 @@
 import React,{Component} from 'react';
+import BottomBar from '@com/BottomBar';
 
-function Mine(){
-    return (
-        <h1>Mine</h1>
-    )
+
+class Mine extends Component{
+    render(){
+        return (
+            <div className="page mine">
+                <h1>Mine1</h1>
+                <BottomBar/>
+            </div>
+            
+        )
+    }
 }
 
 export default Mine;

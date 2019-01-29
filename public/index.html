@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" id="vp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <meta name="theme-color" content="rgb(255, 45, 81)" />
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -21,16 +21,8 @@
     -->
     <title>找家纺</title>
     <script src="%PUBLIC_URL%/fastclick.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/iconfont/iconfont.css">
     <script type="text/javascript">
-      // 把尺寸放大N倍（N是window.devicePixelRatio）
-      var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
-      //物理像素*设备像素比=真实像素
-      document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
-      // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
-      var scale = 1/window.devicePixelRatio;
-      var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
-      document.getElementById("vp").content = mstr;
-
       
       // 引入 FastClick 并且设置 html meta (更多参考 #576)
       // 引入 Promise 的 fallback 支持 (部分安卓手机不支持 Promise)
