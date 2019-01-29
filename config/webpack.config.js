@@ -40,6 +40,9 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+// 引入antd修改主题theme
+const theme = require('../package.json').theme;
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
@@ -349,7 +352,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
-                  ["import", { libraryName: "antd-mobile", style: "css" }]
+                  ["import", { libraryName: "antd-mobile", style: true }]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -449,6 +452,17 @@ module.exports = function(webpackEnv) {
                 'sass-loader'
               ),
             },
+
+            {
+              test: /\.less$/,
+              use: [
+                  'style-loader',
+                  'css-loader',
+                  {loader: 'less-loader', options: {modifyVars: theme}},
+              ],
+              include: /node_modules/,
+            },
+
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.

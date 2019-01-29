@@ -116,7 +116,12 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.11.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "node-sass": "^4.11.0",
     "react-router-dom": "^4.3.1"
+  },
+  "theme": {
+    "brand-primary": "#ff2d51"
   }
 }
