@@ -6,8 +6,12 @@ class Cart extends Component{
     render(){
         return (
             <div className="page cart">
-                <h1>Cart1</h1>
-                <BottomBar/>
+                <div className="main">
+                    <h1>Cart</h1>
+                </div>
+                <footer>
+                    <BottomBar/>
+                </footer>
             </div>
             
         )

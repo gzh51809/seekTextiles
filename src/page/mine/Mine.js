@@ -6,8 +6,12 @@ class Mine extends Component{
     render(){
         return (
             <div className="page mine">
-                <h1>Mine1</h1>
-                <BottomBar/>
+                <div className="main">
+                    <h1>Mine</h1>
+                </div>
+                <footer>
+                    <BottomBar/>
+                </footer>
             </div>
             
         )

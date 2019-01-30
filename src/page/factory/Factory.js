@@ -6,8 +6,12 @@ class Factory extends Component{
     render(){
         return (
             <div className="page factory">
-                <h1>Factory1</h1>
-                <BottomBar/>
+                <div className="main">
+                    <h1>Factory</h1>
+                </div>
+                <footer>
+                    <BottomBar/>
+                </footer>
             </div>
             
         )

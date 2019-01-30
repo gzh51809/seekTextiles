@@ -65,7 +65,7 @@ class BottomBar extends Component {
                     this.state.tabs.map(item=>{
                         return (
                         <TabBar.Item
-                            title={item.name}
+                            title={item.text}
                             key={item.name}
                             icon={<div className={'iconfont ' + item.icon}
                             />

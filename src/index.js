@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '@/sass/base.css';
 import './index.css';
+import 'animate.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {HashRouter} from 'react-router-dom';

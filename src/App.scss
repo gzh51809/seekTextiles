@@ -1,3 +1,25 @@
 .App {
-  text-align: center;
+    height:100%;
+    .page{
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        .main{
+            flex:1;
+            overflow-x:hidden;
+        }
+        &>footer{
+            height:38px;
+            width:100%;
+            .am-tab-bar-bar{
+                height:38px;
+                .iconfont{
+                    font-size:16px;
+                }
+                .am-tab-bar-tab-title{
+                    font-size:8px;
+                }
+            }
+        }
+    }
 }
