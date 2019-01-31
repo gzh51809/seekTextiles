@@ -51,6 +51,34 @@
                     line-height: 22px;
                 }
             }
+            .home-nav{
+                display: flex;
+                flex-wrap:wrap;
+                height: 120px;
+                li{
+                    display: flex;
+                    justify-content: space-around;
+                    flex-direction:column;
+                    align-items:center;
+                    width:20%;
+                    height:50%;
+                    img{
+                        height: 32px;
+                        width: 32px;
+                    }
+                    span{
+                        text-align:center;
+                        font-size:10px;
+                    }
+                }
+            }
+            .home-article .art-carousel .art-item {
+                height: 36px;
+                line-height: 36px;
+                padding-left: 10px;
+                width:100%;
+                white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+              }
         }
         .home-focus{
             width:100%;

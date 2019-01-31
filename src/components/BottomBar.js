@@ -60,6 +60,7 @@ class BottomBar extends Component {
                 tintColor="#ff2d51"
                 barTintColor="white"
                 prerenderingSiblingsNumber={0}
+                noRenderContent
             >
                 {
                     this.state.tabs.map(item=>{

@@ -7,6 +7,7 @@
     "@svgr/webpack": "2.4.1",
     "animate.css": "^3.7.0",
     "antd-mobile": "^2.2.8",
+    "axios": "^0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
@@ -121,7 +122,10 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-sass": "^4.11.0",
-    "react-router-dom": "^4.3.1"
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7"
   },
   "theme": {
     "brand-primary": "#ff2d51"
