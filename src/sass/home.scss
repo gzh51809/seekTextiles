@@ -72,13 +72,43 @@
                     }
                 }
             }
-            .home-article .art-carousel .art-item {
-                height: 36px;
-                line-height: 36px;
-                padding-left: 10px;
-                width:100%;
-                white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-              }
+            .home-article{
+                box-sizing:border-box;
+                height:38px;
+                padding:5px 8px 0;
+                background:#efefef;
+                .art-box{
+                    box-sizing:inherit;
+                    display:flex;
+                    align-items:center;
+                    height:28px;
+                    width:100%;
+                    background:#fff;
+                    border-radius:14px;
+                    padding:0 8px;
+                    &>a img{
+                        height:26px;
+                        width:auto;
+                    }
+                    &>div{
+                        flex:1;
+                        .art-carousel .art-item {
+                            font-size:8px;
+                            height: 14px;
+                            line-height: 14px;
+                            padding-left: 10px;
+                            width:94%;
+                            white-space:nowrap;
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                        }
+                    }
+                    &>span{
+                        margin-left:8px;
+                        font-size:8px;
+                    }
+                }
+            }
         }
         .home-focus{
             width:100%;
