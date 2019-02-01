@@ -7,6 +7,8 @@ import HomeBanner from './HomeBanner';
 import HomeNav from './HomeNav';
 import HomeArticle from './HomeArticle';
 import HomeRank from './HomeRank';
+import HomeSpecials from './HomeSpecials';
+import HomeRecommend from './HomeRecommend';
 
 class HomeFind extends Component{
     constructor(){
@@ -16,7 +18,8 @@ class HomeFind extends Component{
         }
     }
     componentWillMount(){
-        let {mainDatas,likeDatas,inithome} = this.props;
+        let {inithome,addRecommend,clearRecommend} = this.props;
+        // 请求首页初始化数据
         axios({
             method:'get',
             url:`http://api.zhaojiafang.com/v1/index/default`,
@@ -39,9 +42,33 @@ class HomeFind extends Component{
         }).catch((err)=>{
             console.log(err);
         });
+        // 请求Recommend数据
+        axios({
+            method:'get',
+            url:`http://api.zhaojiafang.com/v1/index/likegoods`,
+            params:{
+                AppVersion: '3.11',
+                Format: 'json',
+                SystemName: 'H5',
+                curpage: 1,
+                key: '',
+                page: 10,
+                storeid: 1,
+                timestamp: 1549026718915,
+                Sign: '000576df0b52ee9d9af7b50d058d02e0'
+            }
+        }).then(res=>{
+            let data = res.data.datas;
+            clearRecommend();
+            addRecommend(data);
+        }).catch((err)=>{
+            console.log(err);
+        });
+
     }
     render(){
-        let {mainDatas,likeDatas} = this.props;
+        let {mainDatas,recomDatas} = this.props;
+        console.log('数据：',recomDatas);
         return (
             <div className="home-find">
                 <div className="search">
@@ -54,6 +81,8 @@ class HomeFind extends Component{
                 <HomeNav/>
                 <HomeArticle articles={mainDatas.articles} isok={this.state.isok}/>
                 <HomeRank rankList={mainDatas.ranking.list} isok={this.state.isok} />
+                <HomeSpecials specials={mainDatas.specials} />
+                <HomeRecommend recomDatas={recomDatas}/>
             </div>
         )
     }
@@ -63,7 +92,7 @@ class HomeFind extends Component{
 const mapStateToProps = state=>{
     return {
         mainDatas:state.home.mainDatas,
-        likeDatas:state.home.likeDatas
+        recomDatas:state.home.recomDatas
     }
 }
 // 映射各状态更新提交方法如 remove() 到 this.props 中
@@ -72,7 +101,13 @@ const mapDispatchToProps = (dispatch,ownProps)=>{
     return {
         inithome(data){
             dispatch(homeAction.init(data));
-        }
+        },
+        addRecommend(data){
+            dispatch(homeAction.addRecommend(data));
+        },
+        clearRecommend(){
+            dispatch(homeAction.clearRecommend());
+        },
     }
 }
 // 调用 connect 方法连接 Redux 的 store

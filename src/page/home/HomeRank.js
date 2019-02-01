@@ -4,7 +4,6 @@ import { Tabs } from 'antd-mobile';
 class HomeRank extends Component {
     render() {
         let {rankList} = this.props;
-        console.log('rank',rankList);
         return (
             <div className="home-rank">
                 <div className="rank-name">
