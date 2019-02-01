@@ -6,6 +6,7 @@ import homeAction from '@/redux/actions/homeAction';
 import HomeBanner from './HomeBanner';
 import HomeNav from './HomeNav';
 import HomeArticle from './HomeArticle';
+import HomeRank from './HomeRank';
 
 class HomeFind extends Component{
     constructor(){
@@ -52,6 +53,7 @@ class HomeFind extends Component{
                 <HomeBanner banners={mainDatas.banners} isok={this.state.isok}/>
                 <HomeNav/>
                 <HomeArticle articles={mainDatas.articles} isok={this.state.isok}/>
+                <HomeRank rankList={mainDatas.ranking.list} isok={this.state.isok} />
             </div>
         )
     }

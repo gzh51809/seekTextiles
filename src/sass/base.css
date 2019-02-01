@@ -10,7 +10,7 @@ img {border:0; vertical-align:middle; }
 table { border-collapse:collapse; }
 a {text-decoration:none; }
 
-
+*{box-sizing: border-box;}
 
 /*2.添加公共样式*/
 /*body {

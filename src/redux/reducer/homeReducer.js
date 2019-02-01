@@ -4,7 +4,7 @@ import {
 } from '@/redux/actions/homeAction';
 
 let defaultState = {
-    mainDatas:{banners:[],articles:{list:[{article_id: 1871,article_title: "快递停运时间"}]}},
+    mainDatas:{banners:[],articles:{list:[{article_id: 1871,article_title: "快递停运时间"}]},ranking:{list:[{item_title:'',item_list:[]}]}},
     likeDatas:{}
 };
 let reducer = function(state=defaultState,action){
