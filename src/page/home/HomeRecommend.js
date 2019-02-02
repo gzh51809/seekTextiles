@@ -11,12 +11,12 @@ class HomeRecommend extends Component{
                 </div>
                 <ul>
                     {
-                        recomDatas.item_list.map(item=>{
+                        recomDatas.item_list.map((item,idx)=>{
                             return (
-                                <li key={item.goods_id}>
+                                <li key={idx}>
                                     <img src={item.goods_image_url}/>
                                     <p>{item.goods_name}</p>
-                                    <span>{item.subtitle}</span>
+                                    <span>{item.subtitle.split(' ')[0]}</span>
                                     <strong>{item.goods_price}</strong>
                                 </li>
                             )

@@ -14,7 +14,7 @@ class HomeFind extends Component{
     constructor(){
         super();
         this.state = {
-            isok:false
+            scrollRef:null
         }
     }
     componentWillMount(){
@@ -36,9 +36,6 @@ class HomeFind extends Component{
         }).then(res=>{
             let data = res.data.datas;
             inithome(data);
-            this.setState({
-                isok:true
-            })
         }).catch((err)=>{
             console.log(err);
         });
@@ -54,12 +51,14 @@ class HomeFind extends Component{
                 key: '',
                 page: 10,
                 storeid: 1,
-                timestamp: 1549026718915,
-                Sign: '000576df0b52ee9d9af7b50d058d02e0'
+                timestamp: 1549092338039,
+                Sign: 'cd501303c80457f728ee814e5b0ddd56'
             }
         }).then(res=>{
             let data = res.data.datas;
+            // 清空数据
             clearRecommend();
+            // 插入第一页数据
             addRecommend(data);
         }).catch((err)=>{
             console.log(err);
@@ -68,7 +67,7 @@ class HomeFind extends Component{
     }
     render(){
         let {mainDatas,recomDatas} = this.props;
-        console.log('数据：',recomDatas);
+        console.log('数据：',recomDatas.item_list);
         return (
             <div className="home-find">
                 <div className="search">
@@ -77,12 +76,33 @@ class HomeFind extends Component{
                         搜索商品或商家
                     </a>
                 </div>
-                <HomeBanner banners={mainDatas.banners} isok={this.state.isok}/>
+                {
+                    mainDatas.banners ? 
+                    <HomeBanner banners={mainDatas.banners}/> :
+                    null
+                }
                 <HomeNav/>
-                <HomeArticle articles={mainDatas.articles} isok={this.state.isok}/>
-                <HomeRank rankList={mainDatas.ranking.list} isok={this.state.isok} />
-                <HomeSpecials specials={mainDatas.specials} />
-                <HomeRecommend recomDatas={recomDatas}/>
+                {
+                    mainDatas.articles ?
+                    <HomeArticle articles={mainDatas.articles}/> :
+                    null
+                }
+                {
+                    mainDatas.ranking ?
+                    <HomeRank rankList={mainDatas.ranking.list} /> :
+                    null
+                }
+                {
+                    mainDatas.specials ?
+                    <HomeSpecials specials={mainDatas.specials} /> :
+                    null
+                }
+                {
+                    recomDatas.item_list ?
+                    <HomeRecommend recomDatas={recomDatas}/> :
+                    null
+                }
+                
             </div>
         )
     }

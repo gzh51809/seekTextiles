@@ -6,12 +6,64 @@ import {
 } from '@/redux/actions/homeAction';
 
 let defaultState = {
-    mainDatas:{banners:[],articles:{list:[{article_id: 1871,article_title: "快递停运时间"}]},ranking:{list:[{item_title:'',item_list:[]}]},specials:[{specialitems:[{imageurl:''}]}]},
+    mainDatas:{},
     recomDatas:{
-        item_list:[{goods_id:4713149,goods_name:"2019新款北欧风小清新系列四件套-手机图 1.2m（4英尺）床 菠萝蜜",goods_price:"¥100.00",goods_image_url:"http://imgniu.zhaojiafang.com/store/goods/665/665_06021556354569824.jpg?imageView2/1/w/360/h/360/ignore-error/1/",subtitle:"红口鸭家纺",subtitle_background:"fee6e5",subtitle_fontcolor:"f5534c",href:"/common/goodsdetails/goodsdetail?zresource=n&param_goodsid=4713149"}],
+        item_list:[],
         item_subtitle:"recommend",
         item_title:"秋冬·新品"
-    }
+    },
+    requestData:[
+        {
+            curpage: 1,
+            timestamp: 1549092338039,
+            Sign: 'cd501303c80457f728ee814e5b0ddd56'
+        },
+        {
+            curpage: 2,
+            timestamp: 1549092338039,
+            Sign: 'ab25a337a6038d626a15c1ac76e63753'
+        },
+        {
+            curpage: 3,
+            timestamp: 1549092338039,
+            Sign: '8297173d0b5400b25a51aceccd07a7f1'
+        },
+        {
+            curpage: 4,
+            timestamp: 1549092338039,
+            Sign: '60ecb719cb7a0dcef73285d7f113e5f5'
+        },
+        {
+            curpage: 5,
+            timestamp: 1549092338039,
+            Sign: '5670bdbca2227ff6480a370a7bd31ae0'
+        },
+        {
+            curpage: 6,
+            timestamp: 1549092338039,
+            Sign: '9f08588ece1357d3a0515784f851f969'
+        },
+        {
+            curpage: 7,
+            timestamp: 1549092338039,
+            Sign: '7921c31b13cd0152d339b506154c88a4'
+        },
+        {
+            curpage: 8,
+            timestamp: 1549092338039,
+            Sign: '198c0f3206c5b4a5e05726a4f430f410'
+        },
+        {
+            curpage: 9,
+            timestamp: 1549092338039,
+            Sign: '2973b5265ff017ac4fe2ba72b5d163f7'
+        },
+        {
+            curpage: 10,
+            timestamp: 1549092338039,
+            Sign: '1bd536e07106f55bd9d17f805942c71e'
+        },
+    ]
 };
 let reducer = function(state=defaultState,action){
     // state=defaultState为设置默认值

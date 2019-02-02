@@ -13,7 +13,7 @@ class HomeBanner extends Component{
             <div className="home-banner">
                 <Carousel
                 selectedIndex={0}
-                autoplay={this.props.isok}
+                autoplay={true}
                 infinite
                 beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
                 afterChange={index => console.log('slide to', index)}

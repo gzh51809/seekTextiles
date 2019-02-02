@@ -293,6 +293,12 @@
                             font-size:8px;
                             line-height: 14px;
                             width:90%;
+                            height:28px;
+                            display: -webkit-box;
+                            /* autoprefixer: ignore next */
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                            overflow: hidden;
                             text-align:center;
                             margin-bottom:4px;
                         }

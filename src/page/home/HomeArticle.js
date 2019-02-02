@@ -24,7 +24,7 @@ class HomeArticle extends Component {
                             dots={false}
                             dragging={false}
                             swiping={false}
-                            autoplay={this.props.isok}
+                            autoplay={true}
                             infinite
                             autoplayInterval={1500}
                         >
