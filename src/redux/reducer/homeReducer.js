@@ -2,7 +2,8 @@
 import {
     INIT_MAINDATAS,
     ADD_TO_RECOMDATAS,
-    CLEAR_RECOMDATAS_LIST
+    CLEAR_RECOMDATAS_LIST,
+    INIT_STOREDATA
 } from '@/redux/actions/homeAction';
 
 let defaultState = {
@@ -12,6 +13,7 @@ let defaultState = {
         item_subtitle:"recommend",
         item_title:"秋冬·新品"
     },
+    storeData:{},
     requestData:[
         {
             curpage: 1,
@@ -76,6 +78,13 @@ let reducer = function(state=defaultState,action){
             return {
                 ...state,
                 mainDatas:action.payload
+            }
+        // 初始化storeData
+        case INIT_STOREDATA:
+            // 传入hots数据
+            return {
+                ...state,
+                storeData:action.payload
             }
         // 增加recommend数据
         case ADD_TO_RECOMDATAS:

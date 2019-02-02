@@ -2,11 +2,19 @@
 export const INIT_MAINDATAS = 'INIT_MAINDATAS';
 export const ADD_TO_RECOMDATAS = 'ADD_TO_RECOMDATAS';
 export const CLEAR_RECOMDATAS_LIST = 'CLEAR_RECOMDATAS_LIST';
+export const INIT_STOREDATA = 'INIT_STOREDATA';
 
 // 封装remove函数用于生成action对象{type:xxx,payload:{xxx:xx}}
 export function init(data){
     return {
         type:INIT_MAINDATAS,
+        payload:data
+    }
+}
+// 初始化storeData数据
+export function initStore(data){
+    return {
+        type:INIT_STOREDATA,
         payload:data
     }
 }
@@ -28,5 +36,6 @@ export function clearRecommend(){
 export default {
     init,
     addRecommend,
-    clearRecommend
+    clearRecommend,
+    initStore
 }

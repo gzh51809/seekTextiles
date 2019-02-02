@@ -43,7 +43,6 @@ class Home extends Component{
                 loading:true,
                 currentPage:page
             })
-            console.log(this.state.loading,this.state.currentPage,this.props)
             let Sign = this.props.requestData[page-1].Sign;
             // 请求Recommend数据
             axios({
