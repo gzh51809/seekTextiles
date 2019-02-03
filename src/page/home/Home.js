@@ -71,8 +71,6 @@ class Home extends Component{
         }else{
             console.log('loading')
         }
-
-        
     }
     render(){
         return (

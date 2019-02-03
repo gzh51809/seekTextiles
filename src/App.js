@@ -7,6 +7,7 @@ import Factory from '@/page/factory/Factory';
 import Finder from '@/page/finder/Finder';
 import Cart from '@/page/cart/Cart';
 import Mine from '@/page/mine/Mine';
+import Details from '@/page/details/Details';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/finder" component={Finder} />
           <Route path="/cart" component={Cart} />
           <Route path="/mine" component={Mine} />
+          <Route path="/details/:gid" component={Details} />
           <Redirect from="/" to="/home" exact/>
         </Switch>
       </div>

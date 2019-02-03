@@ -14,7 +14,8 @@ class HomeFind extends Component{
     constructor(){
         super();
         this.state = {
-            scrollRef:null
+            scrollRef:null,
+            goodsLoading:true
         }
     }
     componentWillMount(){
@@ -102,7 +103,11 @@ class HomeFind extends Component{
                     <HomeRecommend recomDatas={recomDatas}/> :
                     null
                 }
-                
+                {
+                    this.state.goodsLoading ?
+                    <div className="home-loading"><img src={require("./img/home-loading.gif")}/></div> :
+                    null
+                }
             </div>
         )
     }
