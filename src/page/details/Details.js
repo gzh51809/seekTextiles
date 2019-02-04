@@ -71,6 +71,7 @@ class Details extends Component {
                         tabBarInactiveTextColor='#999'
                         tabBarActiveTextColor='#000'
                         renderTabBar={renderTabBar}
+                        swipeable={false}
                     >
                         <div className="det-content">
                         {

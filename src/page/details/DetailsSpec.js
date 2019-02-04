@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Carousel } from 'antd-mobile';
 
+import DetailsNav from './DetailsNav';
+
 class DetailsSpec extends Component {
     constructor(){
         super();
@@ -10,28 +12,21 @@ class DetailsSpec extends Component {
         this.handleMouseMove = this.handleMouseMove.bind(this);
     }
     handleMouseMove = () => {
-        // if(a){
-            //走马灯绑定事件，阻止冒泡
-        //   $('.am-popover-mask').on('click touchstart touchmove', (e) => {
-        //     e.stopPropagation()
-        //   })
+            // 试图阻止Carousel组件冒泡失败
             console.log('lala:',this.carouselRef);
-            this.carouselRef.getElementsByClassName('slider-frame')[0].addEventListener('touchmove',(e)=>{
-                console.log('e:',e);
+            this.carouselRef.getElementsByClassName('slider-frame')[0].ontouchstart = (e)=>{
+                console.log('slider-frame ontouchmove:',e);
+                // e.stopPropagation();
+            }
+            this.carouselRef.ontouchstart = (e)=>{
+                console.log('div ontouchmove:',e);
                 e.stopPropagation();
-            },false)
-        // } else {
-            // 注意解绑事件
-            // $('.am-popover-mask').off('click touchstart', (e) => {
-            //     e.stopPropagation()
-            // })
-        // }
+            }
     };
     componentDidMount(){
-        this.handleMouseMove();
+        // this.handleMouseMove();
     }
     render() {
-        console.log('spec:',this.props)
         let {goodsData} = this.props;
         return (
             <div className="det-content">
@@ -61,8 +56,8 @@ class DetailsSpec extends Component {
                         } 
                         )}
                     </Carousel>
-
                 </div>
+                <DetailsNav goods_functions={goodsData.goods_functions}/>
             </div>
         )
     }
