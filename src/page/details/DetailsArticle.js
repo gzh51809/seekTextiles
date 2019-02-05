@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class DetailsArticle extends Component {
     render() {
-        let {mobile_body,goods_subname,goods_price,goods_weight,goods_otherinfo} = this.props;
+        let {mobile_body,goods_subname,goods_price,goods_weight,goods_otherinfo} = this.props.goodsData;
         return (
             <div className="con-article">
                 <h4>{mobile_body}</h4>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Carousel } from 'antd-mobile';
 
 import DetailsNav from './DetailsNav';
+import DetailsArticle from './DetailsArticle';
+import DetailsChoice from './DetailsChoice';
 
 class DetailsSpec extends Component {
     constructor(){
@@ -58,6 +60,12 @@ class DetailsSpec extends Component {
                     </Carousel>
                 </div>
                 <DetailsNav goods_functions={goodsData.goods_functions}/>
+                <DetailsArticle goodsData={goodsData}/>
+                <DetailsChoice 
+                    goods_spec_sel={goodsData.goods_spec_sel}
+                    goods_specs={goodsData.goods_specs}
+                    spec_info={goodsData.spec_info}
+                />
             </div>
         )
     }
