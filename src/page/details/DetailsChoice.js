@@ -73,23 +73,28 @@ class DetailsChoice extends Component {
                     </div>
                 </div>
                 <Modal
+                className="choice-modal"
                 visible={this.state.modal1}
                 transparent
                 maskClosable={false}
                 onClose={this.onClose('modal1')}
                 popup
                 animationType="slide-up"
-                title="Title"
-                footer={[{ text: 'Ok', onPress: () => { console.log('ok'); this.onClose('modal1')(); } }]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
                 >
-                    <div style={{ height: 100, overflow: 'scroll' }}>
+                    <div className="modal-color">
+                        <div className="color-header">
+                            header
+                        </div>
                         scoll content...<br />
                         scoll content...<br />
                         scoll content...<br />
                         scoll content...<br />
                         scoll content...<br />
                         scoll content...<br />
+                        <div className="choice-btn" onClick={()=>{
+                            this.onClose('modal1')();
+                        }}>按钮</div>
                     </div>
                 </Modal>
                 <div className="choice-box">

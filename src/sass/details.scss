@@ -206,3 +206,30 @@
         }
     }
 }
+
+.choice-modal.am-modal-transparent{
+    height:60%;
+    .am-modal-content{
+        border-radius:0px;
+        padding:0;
+        .am-modal-body{
+            padding:0;
+            .modal-color{
+                width:100%;
+                height:100%;
+                display:flex;
+                flex-direction:column;
+                .color-header{
+                    height:80px;
+                }
+                .color-main{
+                    flex:1;
+                    overflow-x:hidden;
+                }
+                .color-btn{
+                    height:32px;
+                }
+            }
+        }
+    }
+}
