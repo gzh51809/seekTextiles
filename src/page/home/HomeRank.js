@@ -3,14 +3,14 @@ import { Tabs } from 'antd-mobile';
 
 class HomeRank extends Component {
     render() {
-        let {rankList} = this.props;
+        let {rankList,handleToDetail} = this.props;
         return (
             <div className="home-rank">
                 <div className="rank-name">
                     <img src={require("./img/icon_rank_title.png")} />
                     <span>每周更新，敬请关注</span>
                 </div>
-                <Tabs tabs={this.props.rankList}
+                <Tabs tabs={rankList}
                     initialPage={1}
                     tabBarPosition="bottom"
                     tabBarUnderlineStyle="none"
@@ -19,7 +19,7 @@ class HomeRank extends Component {
                     renderTab={tab => <span className="rank-btn">{tab.item_title}</span>}
                 >
                 {
-                    this.props.rankList.map(part=>{
+                    rankList.map(part=>{
                         return (
                             <div className="rank-part" key={part.item_title}>
                                 <div>
@@ -30,7 +30,7 @@ class HomeRank extends Component {
                                 {
                                     part.item_list.map(item=>{
                                         return (
-                                            <li key={item.goods_id}>
+                                            <li key={item.goods_id} onClick={()=>{handleToDetail(item.goods_id)}}>
                                                 <img src={item.goods_image_url}/>
                                                 <p>{item.goods_name}</p>
                                                 <strong>{item.goods_price}</strong>

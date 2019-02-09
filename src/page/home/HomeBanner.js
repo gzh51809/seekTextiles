@@ -9,6 +9,7 @@ class HomeBanner extends Component{
         }
     }
     render(){
+        let {banners,handleToPage} = this.props;
         return (
             <div className="home-banner">
                 <Carousel
@@ -18,22 +19,23 @@ class HomeBanner extends Component{
                 beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
                 afterChange={index => console.log('slide to', index)}
                 >
-                    {this.props.banners.map(item => (
+                    {banners.map(item => (
                         <a
                         key={item.imgUrl}
                         href="javascript:;"
                         style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                        onClick={()=>handleToPage(item.href)}
                         >
-                        <img
-                            src={item.imgUrl}
-                            alt=""
-                            style={{ width: '100%', verticalAlign: 'top' }}
-                            onLoad={() => {
-                                // fire window resize event to change height
-                                window.dispatchEvent(new Event('resize'));
-                                this.setState({ imgHeight: 'auto' });
-                            }}
-                        />
+                            <img
+                                src={item.imgUrl}
+                                alt=""
+                                style={{ width: '100%', verticalAlign: 'top' }}
+                                onLoad={() => {
+                                    // fire window resize event to change height
+                                    window.dispatchEvent(new Event('resize'));
+                                    this.setState({ imgHeight: 'auto' });
+                                }}
+                            />
                         </a>
                     ))}
                 </Carousel>

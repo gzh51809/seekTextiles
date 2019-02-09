@@ -5,13 +5,16 @@ import { StickyContainer, Sticky } from 'react-sticky';
 import axios from 'axios';
 
 import DetailsSpec from './DetailsSpec';
+import DetailsPic from './DetailsPic';
 
 function renderTabBar(props) {
     return (<Sticky>
         {({ style }) =>{
             return (<div style={style} className="detail-tab">
                 <span>
-                    <i className="iconfont icon-zuo"></i>
+                    <i className="iconfont icon-zuo" onClick={()=>{
+                        this.props.history.goBack();
+                    }}></i>
                 </span>
                 <Tabs.DefaultTabBar {...props} />
                 <span>
@@ -35,11 +38,28 @@ class Details extends Component {
             ],
             goodsData:{}
         }
+
+        this.updateGoodsData = this.updateGoodsData.bind(this);
+        this.getNewData = this.getNewData.bind(this);
+        this.gotoDetail = this.gotoDetail.bind(this);
     }
-    componentWillMount() {
-        console.log(this.props.match.params);
-        let {gid} = this.props.match.params;
-        // 请求详情页数据
+
+    getNewData(ids){
+        let arr = [];
+        let idKey = '';
+        for(var key in ids){
+            arr.push(ids[key]);
+        }
+        if(arr.length>1){
+            idKey = arr.join('|');
+        }else{
+            idKey = arr[0];
+        }
+        let gid = this.state.goodsData.spec_list[idKey].split(':')[0];
+        this.updateGoodsData(gid);
+    }
+
+    updateGoodsData(gid){
         axios({
             method:'get',
             url:`http://api.zhaojiafang.com/v1/goods/goodsdetail/${gid}`,
@@ -54,13 +74,29 @@ class Details extends Component {
             }
         }).then(res=>{
             let data = res.data.datas;
-            console.log(data);
             this.setState({
                 goodsData:data
             })
         }).catch((err)=>{
             console.log(err);
         });
+    }
+
+    gotoDetail(gid){
+        this.props.history.push('/details/' + gid);
+    }
+
+
+    componentWillMount() {
+        let {gid} = this.props.match.params;
+        // 请求详情页数据
+        this.updateGoodsData(gid);
+    }
+    componentWillReceiveProps(nextProps) {
+        let {gid} = nextProps.match.params;
+        console.log(nextProps)
+        // 请求详情页数据
+        this.updateGoodsData(gid);
     }
 
     render() {
@@ -70,21 +106,27 @@ class Details extends Component {
                     <Tabs tabs={this.state.detailTabs}
                         tabBarInactiveTextColor='#999'
                         tabBarActiveTextColor='#000'
-                        renderTabBar={renderTabBar}
+                        renderTabBar={renderTabBar.bind(this)}
                         swipeable={false}
                     >
                         <div className="det-content">
                         {
                             this.state.goodsData.goods_oriimage ?
-                            <DetailsSpec goodsData={this.state.goodsData}/> :
+                            <DetailsSpec goodsData={this.state.goodsData} handleUpdate={this.getNewData} handleToDetail={this.gotoDetail}/> :
                             null
                         }
                         </div>
                         <div className="det-content">
-                            Content of second tab
+                        {
+                            this.state.goodsData.goods_oriimage ?
+                            <DetailsPic goods_body={this.state.goodsData.goods_body}/> :
+                            null
+                        }
                         </div>
                         <div className="det-content">
-                            Content of third tab
+                            <div className="con-review">
+                                <p>该商品暂无评价</p>
+                            </div>
                         </div>
                     </Tabs>
                 </StickyContainer>

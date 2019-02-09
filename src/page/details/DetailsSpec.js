@@ -4,6 +4,10 @@ import { Carousel } from 'antd-mobile';
 import DetailsNav from './DetailsNav';
 import DetailsArticle from './DetailsArticle';
 import DetailsChoice from './DetailsChoice';
+import DetailsTips from './DetailsTips';
+import DetailsStore from './DetailsStore';
+import DetailsText from './DetailsText';
+import DetailsRecommend from './DetailsRecommend';
 
 class DetailsSpec extends Component {
     constructor(){
@@ -29,9 +33,9 @@ class DetailsSpec extends Component {
         // this.handleMouseMove();
     }
     render() {
-        let {goodsData} = this.props;
+        let {goodsData,handleUpdate,handleToDetail} = this.props;
         return (
-            <div className="det-content">
+            <div className="det-spec">
                 <div ref={c => {this.carouselRef = c;}}>
                     <Carousel
                     selectedIndex={0}
@@ -61,11 +65,11 @@ class DetailsSpec extends Component {
                 </div>
                 <DetailsNav goods_functions={goodsData.goods_functions}/>
                 <DetailsArticle goodsData={goodsData}/>
-                <DetailsChoice 
-                    goods_spec_sel={goodsData.goods_spec_sel}
-                    goods_specs={goodsData.goods_specs}
-                    spec_info={goodsData.spec_info}
-                />
+                <DetailsChoice goodsData={goodsData} handleUpdate={handleUpdate}/>
+                <DetailsTips activitys={goodsData.activitys}/>
+                <DetailsStore store_info={goodsData.store_info}/>
+                <DetailsText mobile_body={goodsData.mobile_body}/>
+                <DetailsRecommend store_recommend={goodsData.store_recommend} handleToDetail={handleToDetail}/>
             </div>
         )
     }

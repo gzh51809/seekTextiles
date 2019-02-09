@@ -17,7 +17,24 @@ class HomeFind extends Component{
             scrollRef:null,
             goodsLoading:true
         }
+        
+        this.gotoDetail = this.gotoDetail.bind(this);
+        this.gotoPage = this.gotoPage.bind(this);
     }
+
+    gotoDetail(gid){
+        this.props.history.push('/details/' + gid);
+    }
+
+    // 判断数据跳转目标是详情页还是列表页
+    gotoPage(href){
+        let _id = '';
+        if(href.startsWith('/common/goodsdetails')){
+            _id = href.split('id=')[1];
+            this.gotoDetail(_id);
+        }
+    }
+
     componentWillMount(){
         let {inithome,addRecommend,clearRecommend} = this.props;
         // 请求首页初始化数据
@@ -68,7 +85,7 @@ class HomeFind extends Component{
     }
     render(){
         let {mainDatas,recomDatas} = this.props;
-        console.log('数据：',recomDatas.item_list);
+        // console.log('数据：',recomDatas.item_list);
         return (
             <div className="home-find">
                 <div className="search">
@@ -79,7 +96,7 @@ class HomeFind extends Component{
                 </div>
                 {
                     mainDatas.banners ? 
-                    <HomeBanner banners={mainDatas.banners}/> :
+                    <HomeBanner banners={mainDatas.banners} handleToPage={this.gotoPage}/> :
                     null
                 }
                 <HomeNav/>
@@ -90,17 +107,17 @@ class HomeFind extends Component{
                 }
                 {
                     mainDatas.ranking ?
-                    <HomeRank rankList={mainDatas.ranking.list} /> :
+                    <HomeRank rankList={mainDatas.ranking.list} handleToDetail={this.gotoDetail} /> :
                     null
                 }
                 {
                     mainDatas.specials ?
-                    <HomeSpecials specials={mainDatas.specials} /> :
+                    <HomeSpecials specials={mainDatas.specials} handleToPage={this.gotoPage} /> :
                     null
                 }
                 {
                     recomDatas.item_list ?
-                    <HomeRecommend recomDatas={recomDatas}/> :
+                    <HomeRecommend recomDatas={recomDatas} handleToDetail={this.gotoDetail}/> :
                     null
                 }
                 {

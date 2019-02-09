@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 
 class HomeSpecials extends Component{
     render(){
+        let {handleToPage} = this.props;
         return (
             <div className="home-specials">
                 {
@@ -21,7 +22,7 @@ class HomeSpecials extends Component{
                         return (
                             <ul key={idx}>
                                 {
-                                    items.specialitems.map(item=><li className={name} key={item.imageurl}><img src={item.imageurl}/></li>)
+                                    items.specialitems.map(item=><li className={name} key={item.imageurl} onClick={()=>handleToPage(item.href)}><img src={item.imageurl}/></li>)
                                 }
                             </ul>
                         )
