@@ -16,8 +16,8 @@ class HomeBanner extends Component{
                 selectedIndex={0}
                 autoplay={true}
                 infinite
-                beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                afterChange={index => console.log('slide to', index)}
+                // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                // afterChange={index => console.log('slide to', index)}
                 >
                     {banners.map(item => (
                         <a

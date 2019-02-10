@@ -40,10 +40,10 @@ class DetailsSpec extends Component {
                     <Carousel
                     selectedIndex={0}
                     infinite
-                    beforeChange={(from, to) => {
-                        console.log(`slide from ${from} to ${to}`);
-                    }}
-                    afterChange={index => console.log('slide to', index)}
+                    // beforeChange={(from, to) => {
+                    //     console.log(`slide from ${from} to ${to}`);
+                    // }}
+                    // afterChange={index => console.log('slide to', index)}
                     >
                         {goodsData.goods_oriimage.map((item,idx) =>{
                             return (

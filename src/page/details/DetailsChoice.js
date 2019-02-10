@@ -158,9 +158,9 @@ class DetailsChoice extends Component {
                             </div>
                             <div>
                                 <strong>{goods_price}</strong>
-                                <i onClick={()=>{
+                                <i className="iconfont icon-guanbi" onClick={()=>{
                                     this.onClose('modal1')();
-                                }}>X</i>
+                                }}></i>
                                 <p>
                                     <em>已选</em>
                                     <span>{}</span>

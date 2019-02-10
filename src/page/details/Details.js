@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import DetailsSpec from './DetailsSpec';
 import DetailsPic from './DetailsPic';
+import DetailsMore from './DetailsMore';
 
 function renderTabBar(props) {
     return (<Sticky>
@@ -19,7 +20,7 @@ function renderTabBar(props) {
                 <Tabs.DefaultTabBar {...props} />
                 <span>
                     <i className="iconfont icon-7"></i>
-                    <i className="iconfont icon-gengduo"></i>
+                    <DetailsMore/>
                 </span>
             </div>)
         }}
@@ -140,7 +141,9 @@ class Details extends Component {
                             <i className="iconfont icon-qq"></i>
                             <span>平台客服</span>
                         </a>
-                        <a href="javascript:;">
+                        <a href="javascript:;" onClick={()=>{
+                            this.props.history.push('/cart');
+                        }}>
                             <i className="iconfont icon-gouwuche"></i>
                             <span>购物车</span>
                         </a>
