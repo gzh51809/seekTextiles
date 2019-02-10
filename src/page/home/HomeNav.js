@@ -22,7 +22,7 @@ class HomeNav extends Component{
                     name:'床垫褥子'
                 },
                 {
-                    iconPic:require('./img/icon_nav5.png'),
+                    iconPic:'http://api.zhaojiafang.com/public/image/icons/index/icon_nav_mianliao.png',
                     name:'面料商城'
                 },
                 {
@@ -38,7 +38,7 @@ class HomeNav extends Component{
                     name:'家具布艺'
                 },
                 {
-                    iconPic:require('./img/icon_nav9.jpg'),
+                    iconPic:'http://api.zhaojiafang.com/public/image/icons/index/icon_nav_gymaojing.jpg',
                     name:'高阳毛巾'
                 },
             ],
