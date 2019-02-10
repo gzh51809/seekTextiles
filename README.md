@@ -1,6 +1,8 @@
 # 找家纺
 
 > 找家纺app，基于Vue + MySQL + Mint-ui + Cube-ui + js 
+>
+> 打包好的apk文件放在doc文件夹中
 
 ### 项目工具
 
@@ -23,6 +25,8 @@
 ├── package-lock.json			模块版本锁定文件
 ├── .gitignore					忽略文件目录
 ├── config/							配置文件
+├── doc/							配置文件
+│	└── seek_textiles1.apk						打包好的apk文件
 ├── public/							公共资料
 ├── scripts/						npm scripts
 └── src/							源文件
