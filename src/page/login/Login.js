@@ -29,13 +29,13 @@ class Login extends Component {
                         // console.log(this.props.location.state);
                         isok = true;
                         if(this.props.location.state == undefined){
-                            this.props.history.push('/home');
+                            this.props.history.replace('/home');
                         }else{
                             let _path = this.props.location.state.from.pathname;
                             let _token = {token:username};
                             this.props.addToken(_token);
                             localStorage.setItem('token', username);
-                            this.props.history.push(_path);
+                            this.props.history.replace(_path);
                         }
                     }
                 })

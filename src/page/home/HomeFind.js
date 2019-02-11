@@ -32,6 +32,9 @@ class HomeFind extends Component{
         if(href.startsWith('/common/goodsdetails')){
             _id = href.split('id=')[1];
             this.gotoDetail(_id);
+        }else if(href.startsWith('/common/goodslist')){
+            _id = href.split('id=')[1];
+            this.props.history.push('/list/' + _id);
         }
     }
 

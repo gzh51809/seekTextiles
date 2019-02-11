@@ -79,7 +79,11 @@ class BottomBar extends Component {
                                 this.setState({
                                     selectedTab: item.path,
                                 });
-                                this.props.history.push(item.path);
+                                if(item.path==='/cart' || item.path==='/mine'){
+                                    this.props.history.push(item.path);
+                                }else{
+                                    this.props.history.replace(item.path);
+                                }
                             }}
                         >
                         </TabBar.Item>
