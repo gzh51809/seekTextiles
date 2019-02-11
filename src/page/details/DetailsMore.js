@@ -38,7 +38,9 @@ class DetailsMore extends Component {
 
     render() {
         return (
-            <Popover mask
+            <Popover 
+                className="detail-more"
+                mask
                 overlayClassName="fortest"
                 overlayStyle={{ color: 'currentColor' }}
                 visible={this.state.visible}
