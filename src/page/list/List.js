@@ -59,6 +59,9 @@ class List extends Component {
                 })
                 return
             }
+            this.setState({
+                loadAll:false
+            })
             let params = _list[page-1];
             page++;
             this.setState({

@@ -1,0 +1,672 @@
+{
+    "typelist":[
+        {
+            "type":"total",
+            "name":"全部"
+        },
+        {
+            "type":"suite",
+            "name":"床品套件"
+        },
+        {
+            "type":"quilt",
+            "name":"被子被芯"
+        },
+        {
+            "type":"pillow",
+            "name":"枕头枕芯"
+        },
+        {
+            "type":"mattress",
+            "name":"床垫褥子"
+        },
+        {
+            "type":"blanket",
+            "name":"毛毯毯子"
+        },
+        {
+            "type":"fabrics",
+            "name":"家居布艺"
+        }
+    ],
+    "total": {
+        "name":"全部",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "3b7dc0a4c3884f4f119e98b19cda91e7"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "3d5bdb01e577ebd934f3a225288d9de4"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "a1a36b753ac7a976268d33c762a45475"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 4,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "eac24edad3a4d4deab326f1413a8ba64"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 5,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "8eaf6ff93e45563c849276587c1e8d2d"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "735a1fda8f9b9937a599b410c36e91d3"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "959c82b9a2622e9c12862fa4d9ea5b66"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "b5328309a30e7e50b3d2da636b15a885"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 4,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "ace3b175979a9ea426c42da372dfe894"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 5,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 0,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "f5517bc7f252aef2fda750a5c6e7bb9d"
+                }
+            ]
+        ]
+    },
+    "suite": {
+        "name":"床品套件",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "5e46a4d636af1b8eb66e26ee17c12784"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "ca28b15f72c2832fa721a823492fcb13"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "574db388b25119afe1d7d52e2ad8da38"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 4,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "bcb267b962142e551a1d808c115d9dfb"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 5,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "080a7b8c1afe1452fbf5575995ac7b4d"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "0b40d24e4f909ae566993eda9d8e6b7e"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "0ceb933b9f80baba60010bff6c68df72"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 1813,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "b6df676a76e006284abfd212e7750c32"
+                }
+            ]
+        ]
+    },
+    "quilt": {
+        "name":"被子被芯",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1852,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "a9eb6547dcbd90ca264e313e661485dc"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1852,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "bd32ad62e9e30a1df780fa0efc97a99a"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1852,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "dd345504aa3e8cb72772d64d5d6ae7d4"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 4,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1852,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "fd304a495f99e43b52ce697540fdade4"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 5,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1852,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "e611646303b43bf3df3d9e04d9310a41"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 1852,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "912067efbe38c1186d5ad931a656a364"
+                }
+            ]
+        ]
+    },
+    "pillow": {
+        "name":"枕头枕芯",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1871,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "4a712446b341c41ea86349c050c0f35f"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1871,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "e2915121f303059c21eff46b55ef31cf"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1871,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "8a7d535563d84846a3945c9983bad5c1"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 4,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1871,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "05939aea5efe31e47133fe52745e2545"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 1871,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "dacaacc4e7d1902f3facbd9a6f14bec3"
+                }
+            ]
+        ]
+    },
+    "mattress": {
+        "name":"床垫褥子",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1885,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "9456f7f87bcd57cc52ebc83b94cd6051"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1885,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "b3c4611283162e2c86f263e05557ef9b"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 0,
+                    "store_scid": 1885,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "369591140423ba25a8e61e74b600cfcc"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "store_application": 5,
+                    "store_scid": 1885,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "8843319bbd51cd47048544126095dd49"
+                }
+            ]
+        ]
+    },
+    "blanket": {
+        "name":"毛毯毯子",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 0,
+                    "store_scid": 1900,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "8e3ae8afe554850da5a9d5b06f058400"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 0,
+                    "store_scid": 1900,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "db412432560fdc5ef5e9085323894e91"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 0,
+                    "store_scid": 1900,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "cbf9c095a5afe6bcbb17c8958eb940bb"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 5,
+                    "store_scid": 1900,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "ef9e8af9e2d677e9a170980bcbd96c5c"
+                }
+            ]
+        ]
+    },
+    "fabrics": {
+        "name":"家居布艺",
+        "list":[
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 0,
+                    "store_scid": 1923,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "31f9e3906da7afba4708a32101963f1c"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 2,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 0,
+                    "store_scid": 1923,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "237365f6d15b58008893a096bb4f5e0d"
+                },
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 3,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 0,
+                    "store_scid": 1923,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "419fcea500a35e11267726f91c970a3f"
+                }
+            ],
+            [
+                {
+                    "AppVersion": "3.11",
+                    "Format": "json",
+                    "SystemName": "H5",
+                    "curpage": 1,
+                    "key": "650667dca833b4596c95ada0b81afb34",
+                    "keyword": "",
+                    "page": 15,
+                    "sort": 0,
+                    "store_application": 5,
+                    "store_scid": 1923,
+                    "storeid": 1,
+                    "timestamp": 1549941151479,
+                    "Sign": "56c98f092ce1de0d2e3e1daa0285b93d"
+                }
+            ]
+        ]
+    }
+}
