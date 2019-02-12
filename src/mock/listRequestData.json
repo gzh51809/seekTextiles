@@ -945,7 +945,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 1,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -955,7 +955,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "0bf1e2fb8d1dcd02653b49e9c3b60d1d"
+                "Sign": "04c8dd56bc8d0484f172c29a364fd33a"
             },
             {
                 "AppVersion": "3.11",
@@ -963,7 +963,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 2,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -973,7 +973,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "d652c415a224f6be5cca646864c2b4a5"
+                "Sign": "054f6e8291bf53b300bb088667accbb6"
             },
             {
                 "AppVersion": "3.11",
@@ -981,7 +981,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 3,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -991,7 +991,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "4059fb472e47ff1788b6df79aecb2a97"
+                "Sign": "b113eb4163df9699cca30147c7f84e63"
             },
             {
                 "AppVersion": "3.11",
@@ -999,7 +999,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 4,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1009,7 +1009,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "8d7ba6b993f42d2b0573b154f949ccc1"
+                "Sign": "7679a8cf0a427720fc914192f1c10725"
             },
             {
                 "AppVersion": "3.11",
@@ -1017,7 +1017,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 5,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1027,7 +1027,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "640dc327be7d90d8156a942a7517bf26"
+                "Sign": "9b95524dc01393000af1b9f0b9e71c7c"
             }
         ]
     },
@@ -1495,7 +1495,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 1,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1505,7 +1505,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "0bf1e2fb8d1dcd02653b49e9c3b60d1d"
+                "Sign": "04c8dd56bc8d0484f172c29a364fd33a"
             },
             {
                 "AppVersion": "3.11",
@@ -1513,7 +1513,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 2,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1523,7 +1523,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "d652c415a224f6be5cca646864c2b4a5"
+                "Sign": "054f6e8291bf53b300bb088667accbb6"
             },
             {
                 "AppVersion": "3.11",
@@ -1531,7 +1531,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 3,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1541,7 +1541,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "4059fb472e47ff1788b6df79aecb2a97"
+                "Sign": "b113eb4163df9699cca30147c7f84e63"
             },
             {
                 "AppVersion": "3.11",
@@ -1549,7 +1549,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 4,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1559,7 +1559,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "8d7ba6b993f42d2b0573b154f949ccc1"
+                "Sign": "7679a8cf0a427720fc914192f1c10725"
             },
             {
                 "AppVersion": "3.11",
@@ -1567,7 +1567,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 5,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -1577,7 +1577,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "640dc327be7d90d8156a942a7517bf26"
+                "Sign": "9b95524dc01393000af1b9f0b9e71c7c"
             }
         ]
     },
@@ -2527,7 +2527,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 1,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -2537,7 +2537,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "0bf1e2fb8d1dcd02653b49e9c3b60d1d"
+                "Sign": "04c8dd56bc8d0484f172c29a364fd33a"
             },
             {
                 "AppVersion": "3.11",
@@ -2545,7 +2545,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 2,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -2555,7 +2555,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "d652c415a224f6be5cca646864c2b4a5"
+                "Sign": "054f6e8291bf53b300bb088667accbb6"
             },
             {
                 "AppVersion": "3.11",
@@ -2563,7 +2563,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 3,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -2573,7 +2573,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "4059fb472e47ff1788b6df79aecb2a97"
+                "Sign": "b113eb4163df9699cca30147c7f84e63"
             },
             {
                 "AppVersion": "3.11",
@@ -2581,7 +2581,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 4,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -2591,7 +2591,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "8d7ba6b993f42d2b0573b154f949ccc1"
+                "Sign": "7679a8cf0a427720fc914192f1c10725"
             },
             {
                 "AppVersion": "3.11",
@@ -2599,7 +2599,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 5,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -2609,7 +2609,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "640dc327be7d90d8156a942a7517bf26"
+                "Sign": "9b95524dc01393000af1b9f0b9e71c7c"
             }
         ]
     },
@@ -3631,7 +3631,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 1,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -3641,7 +3641,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "0bf1e2fb8d1dcd02653b49e9c3b60d1d"
+                "Sign": "04c8dd56bc8d0484f172c29a364fd33a"
             },
             {
                 "AppVersion": "3.11",
@@ -3649,7 +3649,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 2,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -3659,7 +3659,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "d652c415a224f6be5cca646864c2b4a5"
+                "Sign": "054f6e8291bf53b300bb088667accbb6"
             },
             {
                 "AppVersion": "3.11",
@@ -3667,7 +3667,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 3,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -3677,7 +3677,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "4059fb472e47ff1788b6df79aecb2a97"
+                "Sign": "b113eb4163df9699cca30147c7f84e63"
             },
             {
                 "AppVersion": "3.11",
@@ -3685,7 +3685,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 4,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -3695,7 +3695,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "8d7ba6b993f42d2b0573b154f949ccc1"
+                "Sign": "7679a8cf0a427720fc914192f1c10725"
             },
             {
                 "AppVersion": "3.11",
@@ -3703,7 +3703,7 @@
                 "SystemName": "H5",
                 "brandid": "",
                 "curpage": 5,
-                "gc_id": 1887,
+                "gc_id": 1814,
                 "key": "650667dca833b4596c95ada0b81afb34",
                 "keyword": "",
                 "maxprice": "",
@@ -3713,7 +3713,7 @@
                 "page": 10,
                 "storeid": 1,
                 "timestamp": 1549878517904,
-                "Sign": "640dc327be7d90d8156a942a7517bf26"
+                "Sign": "9b95524dc01393000af1b9f0b9e71c7c"
             }
         ]
     }
