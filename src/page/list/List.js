@@ -119,10 +119,10 @@ class List extends Component {
     }
 
     render() {
-        let {layout,goodsList,loading,loadAll} = this.state;
+        let {layout,goodsList,loading,loadAll,listType} = this.state;
         return (
             <div className="list">
-                <ListHeader layout={layout} handleChangeLayout={this.changeLayout} handleChangeListType={this.changeListType} handleBack={this.backPage}/>
+                <ListHeader layout={layout} handleChangeLayout={this.changeLayout} handleChangeListType={this.changeListType} handleBack={this.backPage} listType={listType}/>
                 <div 
                     className="list-main"
                     ref={c => {this.scrollRef = c;}}

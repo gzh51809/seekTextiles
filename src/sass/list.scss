@@ -56,9 +56,24 @@
                         line-height: 30px;
                         color:#000;
                         text-align: center;
+                        &:last-child{
+                            padding-right:10px;
+                            background:url(../page/list/img/price_normal.png) no-repeat center right;
+                            background-size:15% 35%;
+                        }
                     }
                     .active{
                         color:#ff2d51;
+                    }
+                    a.up{
+                        color:#ff2d51;
+                        background:url(../page/list/img/price_up.png) no-repeat center right;
+                        background-size:15% 35%;
+                    }
+                    a.down{
+                        color:#ff2d51;
+                        background:url(../page/list/img/price_down.png) no-repeat center right;
+                        background-size:15% 35%;
                     }
                 }
             }
