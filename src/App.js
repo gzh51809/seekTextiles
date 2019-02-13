@@ -3,20 +3,28 @@ import {Route,Switch,Redirect,withRouter} from 'react-router-dom';
 import './App.scss';
 import {connect} from 'react-redux';
 import loginAction from '@/redux/actions/loginAction';
+import cartAction from '@/redux/actions/cartAction';
 
 import Routers from './router';
 import Home from '@/page/home/Home';
-// import Factory from '@/page/factory/Factory';
-// import Finder from '@/page/finder/Finder';
-// import Cart from '@/page/cart/Cart';
-// import Mine from '@/page/mine/Mine';
-// import Details from '@/page/details/Details';
 
 class App extends Component {
   componentWillMount(){
     if(localStorage.token){
-      let obj = {token:localStorage.token};
+      let username = localStorage.token;
+      let obj = {token:username};
       this.props.addToken(obj);
+      // 根据用户信息获取购物车
+      let {cartData,initCartList} = this.props;
+      let list = []
+      if(cartData){
+          list = cartData.filter(item=>item.customer===username);
+          if(list.length>0){
+              initCartList(list[0].cart_list);
+          }else{
+              initCartList([]);
+          }
+      }
     }
   }
   render() {
@@ -29,11 +37,6 @@ class App extends Component {
           })}
 
           <Route path="/home" component={Home} />
-          {/* <Route path="/factory" component={Factory} />
-          <Route path="/finder" component={Finder} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/mine" component={Mine} />
-          <Route path="/details/:gid" component={Details} /> */}
           <Redirect from="/" to="/home" exact/>
         </Switch>
       </div>
@@ -43,14 +46,18 @@ class App extends Component {
 
 const mapStateToProps = state=>{
   return {
-      token:state.login.token
+      token:state.login.token,
+      cartData:state.cart.cartData,
   }
 }
 const mapDispatchToProps = dispatch=>{
   return {
-      addToken(data){
-          dispatch(loginAction.addToken(data));
-      }
+    addToken(data){
+        dispatch(loginAction.addToken(data));
+    },
+    initCartList(data){
+      dispatch(cartAction.initCustomerCartList(data));
+    }
   }
 }
 App = connect(mapStateToProps,mapDispatchToProps)(App);

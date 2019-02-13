@@ -48,7 +48,8 @@ class CartList extends Component {
 
 
     render() {
-        let {cart_list} = this.props;
+        let {cart_list,handleSelecteItem} = this.props;
+        console.log(cart_list);
         return (
             <div className="cart-list">
             {
@@ -64,9 +65,12 @@ class CartList extends Component {
                         </div>
                         <ul className="store-box">
                         {
-                            items.goods_list.map(item=>{
+                            items.goods_list.map((item,idx)=>{
                                 return <li key={item.goods_id}>
-                                    <i className={"check_store iconfont " + (items.ischecked ? 'active icon-2weixuanzhong' : 'icon-weixuanzhong')}></i>
+                                    <i 
+                                        className={"check_store iconfont " + (item.ischecked ? 'active icon-2weixuanzhong' : 'icon-weixuanzhong')} 
+                                        onClick={()=>handleSelecteItem(index,idx)}
+                                    ></i>
                                     <img src={item.goods_image_url} alt=""/>
                                     <div>
                                         <p>{item.goods_name}</p>

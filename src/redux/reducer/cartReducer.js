@@ -1,7 +1,8 @@
 // 引入action的type常量
 import {
     ADD_TO_CUSTOMERCARTLIST,
-    INIT_CUSTOMERCARTLIST
+    INIT_CUSTOMERCARTLIST,
+    SELECTE_ITEM_IN_CUSTOMERCARTLIST
 } from '@/redux/actions/cartAction';
 
 let defaultState = {
@@ -66,6 +67,31 @@ let reducer = function(state=defaultState,action){
             return {
                 ...state,
                 customerCartList:action.payload
+            }
+        case SELECTE_ITEM_IN_CUSTOMERCARTLIST:
+            // 传入cartData数据的datas
+            
+                // let {index,idx} = action.payload;
+                // let list = state.customerCartList;
+                // let _checked = !list[index].goods_list[idx].ischecked*1;
+                // list[index].goods_list[idx].ischecked = _checked;
+                
+            
+            return {
+                ...state,
+                // customerCartList:list
+                customerCartList:state.customerCartList.map((items,index)=>{
+                    if(index==action.payload.index){
+                        items.goods_list.map((item,idx)=>{
+                            if(idx==action.payload.idx){
+                                item.ischecked = !item.ischecked*1;
+                            }
+                            return item;
+                        })
+                    }
+                    return items;
+                })
+                
             }
         default:
             return state;

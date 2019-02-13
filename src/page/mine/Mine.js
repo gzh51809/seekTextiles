@@ -1,9 +1,12 @@
 import React,{Component} from 'react';
 import BottomBar from '@com/BottomBar';
-import {Button,WingBlank} from 'antd-mobile';
+import {Button,WingBlank,Modal} from 'antd-mobile';
 import {connect} from 'react-redux';
 import loginAction from '@/redux/actions/loginAction';
 import '@/sass/mine.scss';
+
+// 定义antd的confirm对话框
+const alert = Modal.alert;
 
 class Mine extends Component{
     constructor(){
@@ -80,12 +83,22 @@ class Mine extends Component{
                         <ul>
                         {
                             orderList.map(item=>{
-                                return <li><i className={item.icon}></i><span>{item.text}</span></li>
+                                return <li key={item.text}><i className={item.icon}></i><span>{item.text}</span></li>
                             })
                         }
                         </ul>
                     </div>
-                    <WingBlank><Button type="warning" onClick={removeToken}>退出登录</Button></WingBlank>
+                    <WingBlank>
+                        <Button 
+                            type="warning" 
+                            onClick={() =>
+                                alert('提示', '确认退出登录？', [
+                                  { text: '取消', onPress: () => console.log('取消') },
+                                  { text: '确定', onPress: () => removeToken() },
+                                ])
+                              }
+                        >退出登录</Button>
+                    </WingBlank>
                 </div>
                 <footer>
                     <BottomBar/>

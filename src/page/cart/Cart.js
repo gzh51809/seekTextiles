@@ -13,27 +13,38 @@ class Cart extends Component{
             isAllChecked:0,
             totalNum:0,
             totalPrice:'0.00',
-            cartList:[]
+            // cartList:[]
         }
+
+        this.selecteItem = this.selecteItem.bind(this);
     }
+
+    selecteItem(index,idx){
+        console.log(index,idx);
+        let obj = {index,idx};
+        this.props.selecteItemInCart(obj);
+    }
+
     componentWillMount(){
-        let username = localStorage.token;
-        let {cartData,initCartList} = this.props;
-        let list = []
-        if(cartData){
-            list = cartData.filter(item=>item.customer===username);
-            if(list.length>0){
-                initCartList(list[0].cart_list);
-            }else{
-                initCartList([]);
-            }
-        }
+        // let username = localStorage.token;
+        // let {cartData,initCartList} = this.props;
+        // let list = []
+        // if(cartData){
+        //     list = cartData.filter(item=>item.customer===username);
+        //     if(list.length>0){
+        //         initCartList(list[0].cart_list);
+        //     }else{
+        //         initCartList([]);
+        //     }
+        // }
+        // this.setState({cartList:this.props.customerCartList});
     }
-    componentWillReceiveProps(nextProps){
-        this.setState({cartList:nextProps.customerCartList});
-    }
+    // componentWillReceiveProps(nextProps){
+    //     this.setState({cartList:nextProps.customerCartList});
+    // }
     render(){
         let {isAllChecked,totalNum,totalPrice} = this.state;
+        console.log('father',this.props.customerCartList);
         return (
             <div className="page cart">
                 <div className="cart-body">
@@ -41,7 +52,7 @@ class Cart extends Component{
                     <div className="cart-main">
                         {
                             this.props.customerCartList.length>0 ?
-                            <CartList cart_list={this.props.customerCartList}/> :
+                            <CartList cart_list={this.props.customerCartList} handleSelecteItem={this.selecteItem}/> :
                             null
                         }
                     </div>
@@ -69,15 +80,14 @@ class Cart extends Component{
 
 const mapStateToProps = state=>{
     return {
-        cartData:state.cart.cartData,
+        // cartData:state.cart.cartData,
         customerCartList:state.cart.customerCartList
     }
 }
 const mapDispatchToProps = dispatch=>{
-    //ownProps为未连接Redux前的props，一般用不到
     return {
-        initCartList(data){
-            dispatch(cartAction.initCustomerCartList(data));
+        selecteItemInCart(data){
+            dispatch(cartAction.selecteItemInCart(data));
         },
     }
 }

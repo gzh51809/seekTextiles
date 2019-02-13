@@ -3,6 +3,7 @@ import { List, InputItem,NavBar,Toast } from 'antd-mobile';
 import '@/sass/login.scss';
 import {connect} from 'react-redux';
 import loginAction from '@/redux/actions/loginAction';
+import cartAction from '@/redux/actions/cartAction';
 
 function showToast(text) {
     Toast.info(text, 2);
@@ -17,6 +18,21 @@ class Login extends Component {
         }
 
         this.handleVerdict = this.handleVerdict.bind(this);
+        this.handleInitCart = this.handleInitCart.bind(this);
+    }
+
+    // 查找用户购物车数据
+    handleInitCart(username){
+        let {cartData,initCartList} = this.props;
+        let list = []
+        if(cartData){
+            list = cartData.filter(item=>item.customer===username);
+            if(list.length>0){
+                initCartList(list[0].cart_list);
+            }else{
+                initCartList([]);
+            }
+        }
     }
 
     handleVerdict(){
@@ -26,9 +42,13 @@ class Login extends Component {
                 let isok = false;
                 this.props.userInfo.forEach(item=>{
                     if(item.username === username && item.psw === psw){
-                        // console.log(this.props.location.state);
                         isok = true;
+                        // 登录成功缓存用户购物车数据
+                        this.handleInitCart(username);
                         if(this.props.location.state == undefined){
+                            let _token = {token:username};
+                            this.props.addToken(_token);
+                            localStorage.setItem('token', username);
                             this.props.history.replace('/home');
                         }else{
                             let _path = this.props.location.state.from.pathname;
@@ -91,7 +111,8 @@ class Login extends Component {
 const mapStateToProps = state=>{
     return {
         userInfo:state.login.userInfo,
-        token:state.login.token
+        token:state.login.token,
+        cartData:state.cart.cartData,
     }
 }
 const mapDispatchToProps = dispatch=>{
@@ -99,6 +120,9 @@ const mapDispatchToProps = dispatch=>{
     return {
         addToken(data){
             dispatch(loginAction.addToken(data));
+        },
+        initCartList(data){
+            dispatch(cartAction.initCustomerCartList(data));
         },
     }
 }
