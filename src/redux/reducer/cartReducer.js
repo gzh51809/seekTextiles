@@ -92,7 +92,6 @@ let reducer = function(state=defaultState,action){
                     }
                     if(!hasStore){
                         list.push(action.payload);
-                        console.log('list',list);
                     }
                     return list;
                 }())
@@ -167,7 +166,6 @@ let reducer = function(state=defaultState,action){
                 customerCartList:(function(){
                     let {qty,index,idx} = action.payload;
                     let list = [...state.customerCartList];
-                    console.log(index,list[index])
                     list[index].goods_list[idx].goods_num = qty;
                     return list;
                 }())
@@ -184,7 +182,6 @@ let reducer = function(state=defaultState,action){
                     if(list[index].goods_list.length==0){
                         list.splice(index,1);
                     }
-                    console.log('dddlist',list);
                     return list;
                 }())
             }
