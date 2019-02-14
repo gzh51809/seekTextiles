@@ -2,7 +2,11 @@
 import {
     ADD_TO_CUSTOMERCARTLIST,
     INIT_CUSTOMERCARTLIST,
-    SELECTE_ITEM_IN_CUSTOMERCARTLIST
+    SELECTE_ITEM_IN_CUSTOMERCARTLIST,
+    SELECTE_STORE_IN_CUSTOMERCARTLIST,
+    SELECTE_ALL_IN_CUSTOMERCARTLIST,
+    CHANGE_NUM_IN_CUSTOMERCARTLIST,
+    DELETE_ITEM_IN_CUSTOMERCARTLIST
 } from '@/redux/actions/cartAction';
 
 let defaultState = {
@@ -46,6 +50,11 @@ let defaultState = {
                     ]
                 },
             ]
+        },
+        {
+            customer:'haha',
+            isAllChecked: 0,
+            cart_list:[]
         }
     ],
     customerCartList:[]
@@ -60,39 +69,126 @@ let reducer = function(state=defaultState,action){
             // 传入cartData数据的datas
             return {
                 ...state,
-                customerCartList:state.customerCartList.concat(action.payload)
+                customerCartList:(function(){
+                    let list = [...state.customerCartList];
+                    let hasStore = false;
+                    for(let i=0;i<list.length;i++){
+                        if(list[i].store_id == action.payload.store_id){
+                            hasStore = true;
+                            let goodslist = [...list[i].goods_list];
+                            let hasGoods = false;
+                            for(let j=0;j<goodslist.length;j++){
+                                // console.log(goodslist.goods_id,action.payload.goods_list[0].goods_id)
+                                if(goodslist[j].goods_id==action.payload.goods_list[0].goods_id){
+                                    hasGoods = true;
+                                    goodslist[j].goods_num += action.payload.goods_list[0].goods_num;
+                                }
+                            }
+                            if(!hasGoods){
+                                goodslist.push(action.payload.goods_list[0]);
+                            }
+                            list[i].goods_list = goodslist;
+                        }
+                    }
+                    if(!hasStore){
+                        list.push(action.payload);
+                        console.log('list',list);
+                    }
+                    return list;
+                }())
             }
+
         case INIT_CUSTOMERCARTLIST:
             // 传入cartData数据的datas
             return {
                 ...state,
                 customerCartList:action.payload
             }
+
         case SELECTE_ITEM_IN_CUSTOMERCARTLIST:
-            // 传入cartData数据的datas
-            
-                // let {index,idx} = action.payload;
-                // let list = state.customerCartList;
-                // let _checked = !list[index].goods_list[idx].ischecked*1;
-                // list[index].goods_list[idx].ischecked = _checked;
-                
-            
+            // 传入需要修改的店铺index和商品idx
             return {
                 ...state,
-                // customerCartList:list
-                customerCartList:state.customerCartList.map((items,index)=>{
-                    if(index==action.payload.index){
-                        items.goods_list.map((item,idx)=>{
-                            if(idx==action.payload.idx){
-                                item.ischecked = !item.ischecked*1;
-                            }
+                customerCartList:(function(){
+                    let {index,idx} = action.payload;
+                    let list = [...state.customerCartList];
+                    let _checked = !list[index].goods_list[idx].ischecked*1;
+                    list[index].goods_list[idx].ischecked = _checked;
+                    if(list[index].goods_list.every(item=>item.ischecked)){
+                        list[index].allchecked = 1;
+                    }else{
+                        list[index].allchecked = 0;
+                    }
+                    return list;
+                }())
+            }
+
+        case SELECTE_STORE_IN_CUSTOMERCARTLIST:
+            // 传入需要修改的店铺index
+            return {
+                ...state,
+                customerCartList:(function(){
+                    let index = action.payload;
+                    let list = [...state.customerCartList];
+                    let _checked = !list[index].allchecked*1;
+                    list[index].allchecked = _checked;
+                    let newStore = list[index];
+                    newStore.goods_list = newStore.goods_list.map(item=>{
+                        item.ischecked=_checked;
+                        return item
+                    });
+                    list.splice(index,1,newStore);
+                    return list;
+                }())
+            }
+
+        case SELECTE_ALL_IN_CUSTOMERCARTLIST:
+            // 传入全选的checked
+            return {
+                ...state,
+                customerCartList:(function(){
+                    let _checked = action.payload;
+                    let list = [...state.customerCartList.map(items=>{
+                        items.allchecked = _checked;
+                        items.goods_list = items.goods_list.map(item=>{
+                            item.ischecked = _checked;
                             return item;
                         })
-                    }
-                    return items;
-                })
-                
+                        return items;
+                    })]
+                    return list;
+                }())
             }
+
+        case CHANGE_NUM_IN_CUSTOMERCARTLIST:
+            // 传入需要修改的店铺index和商品idx
+            return {
+                ...state,
+                customerCartList:(function(){
+                    let {qty,index,idx} = action.payload;
+                    let list = [...state.customerCartList];
+                    console.log(index,list[index])
+                    list[index].goods_list[idx].goods_num = qty;
+                    return list;
+                }())
+            }
+
+            case DELETE_ITEM_IN_CUSTOMERCARTLIST:
+            // 传入全选的checked
+            return {
+                ...state,
+                customerCartList:(function(){
+                    let {index,idx} = action.payload;
+                    let list = [...state.customerCartList];
+                    list[index].goods_list.splice(idx,1);
+                    if(list[index].goods_list.length==0){
+                        list.splice(index,1);
+                    }
+                    console.log('dddlist',list);
+                    return list;
+                }())
+            }
+
         default:
             return state;
     }

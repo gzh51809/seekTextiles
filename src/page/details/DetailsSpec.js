@@ -33,7 +33,7 @@ class DetailsSpec extends Component {
         // this.handleMouseMove();
     }
     render() {
-        let {goodsData,handleUpdate,handleToDetail} = this.props;
+        let {goodsData,handleUpdate,handleToDetail,qty,handleComputeNum,handleInputNum,handleAddToCart} = this.props;
         return (
             <div className="det-spec">
                 <div ref={c => {this.carouselRef = c;}}>
@@ -65,7 +65,14 @@ class DetailsSpec extends Component {
                 </div>
                 <DetailsNav goods_functions={goodsData.goods_functions}/>
                 <DetailsArticle goodsData={goodsData}/>
-                <DetailsChoice goodsData={goodsData} handleUpdate={handleUpdate}/>
+                <DetailsChoice 
+                    goodsData={goodsData} 
+                    handleUpdate={handleUpdate} 
+                    qty={qty} 
+                    handleComputeNum={handleComputeNum} 
+                    handleInputNum={handleInputNum} 
+                    handleAddToCart={handleAddToCart}
+                />
                 <DetailsTips activitys={goodsData.activitys}/>
                 <DetailsStore store_info={goodsData.store_info}/>
                 <DetailsText mobile_body={goodsData.mobile_body}/>

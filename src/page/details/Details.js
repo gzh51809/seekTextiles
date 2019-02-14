@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import '@/sass/details.scss';
-import { Tabs } from 'antd-mobile';
+import { Tabs, Toast } from 'antd-mobile';
 import { StickyContainer, Sticky } from 'react-sticky';
 import axios from 'axios';
+
+import {connect} from 'react-redux';
+import cartAction from '@/redux/actions/cartAction';
 
 import DetailsSpec from './DetailsSpec';
 import DetailsPic from './DetailsPic';
@@ -37,12 +40,16 @@ class Details extends Component {
                 { title: '图文' },
                 { title: '评论' },
             ],
-            goodsData:{}
+            goodsData:{},
+            qty:1
         }
 
         this.updateGoodsData = this.updateGoodsData.bind(this);
         this.getNewData = this.getNewData.bind(this);
         this.gotoDetail = this.gotoDetail.bind(this);
+        this.addToCart = this.addToCart.bind(this);
+        this.computeNum = this.computeNum.bind(this);
+        this.inputNum = this.inputNum.bind(this);
     }
 
     getNewData(ids){
@@ -87,6 +94,61 @@ class Details extends Component {
         this.props.history.push('/details/' + gid);
     }
 
+    computeNum(type){
+        let {qty} = this.state;
+        if(type == 'add'){
+            if(qty<=98){
+                qty++;
+                this.setState({
+                    qty
+                })
+            }else{
+                this.setState({
+                    qty:99
+                })
+            }
+        }else{
+            if(qty>1){
+                qty--;
+                this.setState({
+                    qty
+                })
+            }else{
+                this.setState({
+                    qty:1
+                })
+            }
+        }
+    }
+
+    inputNum(qty){
+        this.setState({
+            qty
+        })
+    }
+
+    addToCart(){
+        let {store_info,goods_id,goods_oriimage,goods_name,goods_price,goods_subname} = this.state.goodsData;
+        let data = {
+            store_id:store_info.store_id,
+            store_name:store_info.store_name,
+            allchecked:0,
+            goods_list:[
+                {
+                    goods_id,
+                    goods_image_url:goods_oriimage[0],
+                    goods_name,
+                    goods_num:this.state.qty,
+                    goods_price,
+                    goods_subname,
+                    ischecked:0
+                }
+            ]
+        }
+        this.props.addToCartList(data);
+        Toast.info('添加成功', 1);
+    }
+
 
     componentWillMount() {
         let {gid} = this.props.match.params;
@@ -95,7 +157,6 @@ class Details extends Component {
     }
     componentWillReceiveProps(nextProps) {
         let {gid} = nextProps.match.params;
-        console.log(nextProps)
         // 请求详情页数据
         this.updateGoodsData(gid);
     }
@@ -113,8 +174,15 @@ class Details extends Component {
                         <div className="det-content">
                         {
                             this.state.goodsData.goods_oriimage ?
-                            <DetailsSpec goodsData={this.state.goodsData} handleUpdate={this.getNewData} handleToDetail={this.gotoDetail}/> :
-                            null
+                            <DetailsSpec 
+                                goodsData={this.state.goodsData} 
+                                handleUpdate={this.getNewData} 
+                                handleToDetail={this.gotoDetail}
+                                qty={this.state.qty}
+                                handleComputeNum={this.computeNum}
+                                handleInputNum={this.inputNum}
+                                handleAddToCart={this.addToCart}
+                            /> : null
                         }
                         </div>
                         <div className="det-content">
@@ -149,7 +217,7 @@ class Details extends Component {
                         </a>
                     </div>
                     <div className="btn-right">
-                        <a href="javascript:;">加入购物车</a>
+                        <a href="javascript:;" onClick={this.addToCart}>加入购物车</a>
                         <a href="javascript:;">立即购买</a>
                     </div>
                 </div>
@@ -158,4 +226,18 @@ class Details extends Component {
     }
 }
 
+const mapStateToProps = state=>{
+    return {
+        // cartData:state.cart.cartData,
+        customerCartList:state.cart.customerCartList
+    }
+}
+const mapDispatchToProps = dispatch=>{
+    return {
+        addToCartList(data){
+            dispatch(cartAction.addCustomerCartList(data));
+        },
+    }
+}
+Details = connect(mapStateToProps,mapDispatchToProps)(Details);
 export default Details;

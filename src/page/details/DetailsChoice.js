@@ -66,37 +66,12 @@ class DetailsChoice extends Component {
 
     handleInputNum(e){
         if(!isNaN(e.target.value) && (e.target.value>=1) && (e.target.value<=99)){
-            this.setState({
-                qty:e.target.value
-            })
+            this.props.handleInputNum(e.target.value);
         }
     }
 
     handleComputeNum(e){
-        let qty = this.state.qty;
-        if(e.target.className == 'add'){
-            if(qty<=98){
-                qty++;
-                this.setState({
-                    qty
-                })
-            }else{
-                this.setState({
-                    qty:99
-                })
-            }
-        }else{
-            if(qty>1){
-                qty--;
-                this.setState({
-                    qty
-                })
-            }else{
-                this.setState({
-                    qty:1
-                })
-            }
-        }
+        this.props.handleComputeNum(e.target.className);
     }
 
 
@@ -113,7 +88,7 @@ class DetailsChoice extends Component {
     }
 
     render() {
-        let {goodsData} = this.props;
+        let {goodsData,qty,handleAddToCart} = this.props;
         let { goods_spec_sel, goods_specs, spec_info, goods_price, goods_weight, goods_attributes,goods_oriimage } = goodsData;
         return (
             <div className="con-choice">
@@ -204,13 +179,13 @@ class DetailsChoice extends Component {
                                 <span>数量</span>
                                 <div>
                                     <a href="javascript:;" className="sub" onClick={this.handleComputeNum}>-</a>
-                                    <input type="text" value={this.state.qty} onChange={this.handleInputNum}/>
+                                    <input type="text" value={qty} onChange={this.handleInputNum}/>
                                     <a href="javascript:;" className="add" onClick={this.handleComputeNum}>+</a>
                                 </div>
                             </div>
                         </div>
                         <div className="color-footer">
-                            <a href="javascript:;">加入购物车</a>
+                            <a href="javascript:;" onClick={handleAddToCart}>加入购物车</a>
                             <a href="javascript:;">立即购买</a>
                         </div>
                     </div>

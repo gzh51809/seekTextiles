@@ -2,6 +2,10 @@
 export const ADD_TO_CUSTOMERCARTLIST = 'ADD_TO_CUSTOMERCARTLIST';
 export const INIT_CUSTOMERCARTLIST = 'INIT_CUSTOMERCARTLIST';
 export const SELECTE_ITEM_IN_CUSTOMERCARTLIST = 'SELECTE_ITEM_IN_CUSTOMERCARTLIST';
+export const SELECTE_STORE_IN_CUSTOMERCARTLIST = 'SELECTE_STORE_IN_CUSTOMERCARTLIST';
+export const SELECTE_ALL_IN_CUSTOMERCARTLIST = 'SELECTE_ALL_IN_CUSTOMERCARTLIST';
+export const CHANGE_NUM_IN_CUSTOMERCARTLIST = 'CHANGE_NUM_IN_CUSTOMERCARTLIST';
+export const DELETE_ITEM_IN_CUSTOMERCARTLIST = 'DELETE_ITEM_IN_CUSTOMERCARTLIST';
 
 // 增加购物车数据
 export function addCustomerCartList(data){
@@ -17,10 +21,38 @@ export function initCustomerCartList(data){
         payload:data
     }
 }
-// 选中单个
+// 选中单个商品
 export function selecteItemInCart(data){
     return {
         type:SELECTE_ITEM_IN_CUSTOMERCARTLIST,
+        payload:data
+    }
+}
+// 选中单个店铺
+export function selecteStoreInCart(data){
+    return {
+        type:SELECTE_STORE_IN_CUSTOMERCARTLIST,
+        payload:data
+    }
+}
+// 选中单个店铺
+export function selecteAllInCart(data){
+    return {
+        type:SELECTE_ALL_IN_CUSTOMERCARTLIST,
+        payload:data
+    }
+}
+// 修改商品数量
+export function changeNumInCart(data){
+    return {
+        type:CHANGE_NUM_IN_CUSTOMERCARTLIST,
+        payload:data
+    }
+}
+// 删除商品
+export function deleteItemInCart(data){
+    return {
+        type:DELETE_ITEM_IN_CUSTOMERCARTLIST,
         payload:data
     }
 }
@@ -31,5 +63,9 @@ export function selecteItemInCart(data){
 export default {
     addCustomerCartList,
     initCustomerCartList,
-    selecteItemInCart
+    selecteItemInCart,
+    selecteStoreInCart,
+    selecteAllInCart,
+    changeNumInCart,
+    deleteItemInCart
 }

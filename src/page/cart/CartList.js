@@ -4,52 +4,28 @@ class CartList extends Component {
     constructor() {
         super();
         this.state = {
-            qty:1
+            
         }
 
         this.handleInputNum = this.handleInputNum.bind(this);
         this.handleComputeNum = this.handleComputeNum.bind(this);
     }
 
-    handleInputNum(e){
+    // 输入数量
+    handleInputNum(e,index,idx){
         if(!isNaN(e.target.value) && (e.target.value>=1) && (e.target.value<=99)){
-            this.setState({
-                qty:e.target.value
-            })
+            this.props.handleInputNum(e.target.value,index,idx);
         }
     }
 
-    handleComputeNum(e){
-        let qty = this.state.qty;
-        if(e.target.className == 'add'){
-            if(qty<=98){
-                qty++;
-                this.setState({
-                    qty
-                })
-            }else{
-                this.setState({
-                    qty:99
-                })
-            }
-        }else{
-            if(qty>1){
-                qty--;
-                this.setState({
-                    qty
-                })
-            }else{
-                this.setState({
-                    qty:1
-                })
-            }
-        }
+    // 加减数量
+    handleComputeNum(e,index,idx){
+        this.props.handleComputeNum(e.target.className,index,idx);
     }
 
 
     render() {
-        let {cart_list,handleSelecteItem} = this.props;
-        console.log(cart_list);
+        let {cart_list,handleSelecteItem,handleSelecteStore,handleDeleteItem} = this.props;
         return (
             <div className="cart-list">
             {
@@ -57,7 +33,10 @@ class CartList extends Component {
                     return (
                     <div className="list-store" key={items.store_id}>
                         <div className="store-header">
-                            <i className={"check_store iconfont " + (items.allchecked ? 'active icon-2weixuanzhong' : 'icon-weixuanzhong')}></i>
+                            <i 
+                                className={"check_store iconfont " + (items.allchecked ? 'active icon-2weixuanzhong' : 'icon-weixuanzhong')}
+                                onClick={()=>handleSelecteStore(index)}
+                            ></i>
                             <div>
                                 <em className="iconfont icon-dianpu"></em>
                                 <span>{items.store_name}</span>
@@ -78,11 +57,11 @@ class CartList extends Component {
                                         <div>
                                             <strong>{item.goods_price}</strong>
                                             <div>
-                                                <a href="javascript:;" className="sub" onClick={this.handleComputeNum}>-</a>
-                                                <input type="text" value={this.state.qty} onChange={this.handleInputNum}/>
-                                                <a href="javascript:;" className="add" onClick={this.handleComputeNum}>+</a>
+                                                <a href="javascript:;" className="sub" onClick={(e)=>this.handleComputeNum(e,index,idx)}>-</a>
+                                                <input type="text" value={item.goods_num} onChange={(e)=>this.handleInputNum(e,index,idx)}/>
+                                                <a href="javascript:;" className="add" onClick={(e)=>this.handleComputeNum(e,index,idx)}>+</a>
                                             </div>
-                                            <em className="iconfont icon-del"></em>
+                                            <em className="iconfont icon-del" onClick={()=>handleDeleteItem(index,idx)}></em>
                                         </div>
                                     </div>
                                 </li>

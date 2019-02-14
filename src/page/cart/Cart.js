@@ -12,59 +12,129 @@ class Cart extends Component{
         this.state = {
             isAllChecked:0,
             totalNum:0,
-            totalPrice:'0.00',
-            // cartList:[]
+            totalPrice:'0.00'
         }
 
         this.selecteItem = this.selecteItem.bind(this);
+        this.selecteStore = this.selecteStore.bind(this);
+        this.selecteAll = this.selecteAll.bind(this);
+        this.computeNum = this.computeNum.bind(this);
+        this.inputNum = this.inputNum.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
 
+    // 选择单个商品
     selecteItem(index,idx){
-        console.log(index,idx);
         let obj = {index,idx};
         this.props.selecteItemInCart(obj);
     }
 
-    componentWillMount(){
-        // let username = localStorage.token;
-        // let {cartData,initCartList} = this.props;
-        // let list = []
-        // if(cartData){
-        //     list = cartData.filter(item=>item.customer===username);
-        //     if(list.length>0){
-        //         initCartList(list[0].cart_list);
-        //     }else{
-        //         initCartList([]);
-        //     }
-        // }
-        // this.setState({cartList:this.props.customerCartList});
+    // 选择单个店铺
+    selecteStore(index){
+        this.props.selecteStoreInCart(index);
     }
-    // componentWillReceiveProps(nextProps){
-    //     this.setState({cartList:nextProps.customerCartList});
-    // }
+
+    // 点击全选
+    selecteAll(e){
+        if(e.target.className.endsWith('icon-weixuanzhong')){
+            this.props.selecteAllInCart(1);
+        }else{
+            this.props.selecteAllInCart(0);
+        }
+    }
+
+    // 输入数量
+    inputNum(qty,index,idx){
+        let obj = {qty,index,idx}
+        this.props.changeNumInCart(obj);
+    }
+
+    // 计算加减数量
+    computeNum(type,index,idx){
+        let qty = this.props.customerCartList[index].goods_list[idx].goods_num;
+        if(type == 'add'){
+            if(qty<=98){
+                qty++;
+                let obj = {qty,index,idx}
+                this.props.changeNumInCart(obj)
+            }
+        }else{
+            if(qty>1){
+                qty--;
+                let obj = {qty,index,idx}
+                this.props.changeNumInCart(obj)
+            }
+        }
+    }
+
+    // 删除商品
+    deleteItem(index,idx){
+        let obj = {index,idx}
+        this.props.deleteItemInCart(obj);
+    }
+
     render(){
         let {isAllChecked,totalNum,totalPrice} = this.state;
-        console.log('father',this.props.customerCartList);
         return (
             <div className="page cart">
                 <div className="cart-body">
-                    <header>购物车(0)</header>
+                    <header>购物车({
+                        this.props.customerCartList.reduce(function(prev,cur){
+                            let goodsNum = cur.goods_list.reduce(function(pre,cu){
+                                let num = cu.goods_num;
+                                return pre + num;
+                            },0)
+                            return prev + goodsNum;
+                        },0)
+                    })</header>
                     <div className="cart-main">
                         {
                             this.props.customerCartList.length>0 ?
-                            <CartList cart_list={this.props.customerCartList} handleSelecteItem={this.selecteItem}/> :
-                            null
+                            <CartList 
+                                cart_list={this.props.customerCartList} 
+                                handleSelecteItem={this.selecteItem} 
+                                handleSelecteStore={this.selecteStore}
+                                handleComputeNum = {this.computeNum}
+                                handleInputNum = {this.inputNum}
+                                handleDeleteItem = {this.deleteItem}
+                            /> : null
                         }
                     </div>
                     <div className="cart-btn">
                         <label>
-                            <i className={"check_all iconfont " + (isAllChecked ? 'active icon-2weixuanzhong' : 'icon-weixuanzhong')}></i>
+                            {
+                                this.props.customerCartList.length>0 ?
+                                <i className={"check_all iconfont " + (this.props.customerCartList.every(item=>item.allchecked) ? 'active icon-2weixuanzhong' : 'icon-weixuanzhong')} onClick={this.selecteAll}></i> :
+                                <i className={"check_all iconfont icon-weixuanzhong"}></i>
+                            }
                             全选
                         </label>
-                        <em>共计{totalNum}件商品</em>
+                        <em>共计{
+                            this.props.customerCartList.reduce(function(prev,cur){
+                                let goodsNum = cur.goods_list.reduce(function(pre,cu){
+                                    let num = 0;
+                                    if(cu.ischecked){
+                                        num = cu.goods_num;
+                                    }
+                                    return pre + num;
+                                },0)
+                                return prev + goodsNum;
+                            },0)
+                        }件商品</em>
                         <span>
                             合计
-                            <strong>￥{totalPrice}</strong>
+                            <strong>￥{
+                                this.props.customerCartList.reduce(function(prev,cur){
+                                    let goodsPrice = cur.goods_list.reduce(function(pre,cu){
+                                        let price = 0;
+                                        if(cu.ischecked){
+                                            price = cu.goods_num*cu.goods_price.slice(1)
+                                        }
+                                        return pre + price;
+                                    },0)
+                                    return prev + goodsPrice;
+                                },0)
+                            }</strong>
                         </span>
                         <a href="javascript:;">结算</a>
                     </div>
@@ -80,7 +150,6 @@ class Cart extends Component{
 
 const mapStateToProps = state=>{
     return {
-        // cartData:state.cart.cartData,
         customerCartList:state.cart.customerCartList
     }
 }
@@ -88,6 +157,18 @@ const mapDispatchToProps = dispatch=>{
     return {
         selecteItemInCart(data){
             dispatch(cartAction.selecteItemInCart(data));
+        },
+        selecteStoreInCart(data){
+            dispatch(cartAction.selecteStoreInCart(data));
+        },
+        selecteAllInCart(data){
+            dispatch(cartAction.selecteAllInCart(data));
+        },
+        changeNumInCart(data){
+            dispatch(cartAction.changeNumInCart(data));
+        },
+        deleteItemInCart(data){
+            dispatch(cartAction.deleteItemInCart(data));
         },
     }
 }
