@@ -13,7 +13,6 @@ class HomeRank extends Component {
                 <Tabs tabs={rankList}
                     initialPage={1}
                     tabBarPosition="bottom"
-                    tabBarUnderlineStyle="none"
                     swipeable={false}
                     tabBarBackgroundColor="transparent"
                     renderTab={tab => <span className="rank-btn">{tab.item_title}</span>}
